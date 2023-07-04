@@ -1,4 +1,5 @@
 import SidebarView from "./SidebarView.js";
+import CardProductView from "./CardProductView.js";
 
 class App {
   constructor() {
@@ -7,6 +8,7 @@ class App {
 
   #initComponent() {
     new SidebarView();
+    new CardProductView();
   }
 }
 

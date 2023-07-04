@@ -6,7 +6,6 @@ class SidebarView {
       switch (event.currentTarget) {
         case this.#header:
           const targetHeader = event.target;
-          console.log(targetHeader);
 
           if (targetHeader.closest(".sidebar__hamb")) {
             this.#showSidebarPanel();

@@ -20,3 +20,5 @@ const SIDE_PICTURES = [
     src: "./images/slides/icon-slide-5.jpg",
   },
 ];
+
+export default SIDE_PICTURES;
