@@ -4,12 +4,11 @@
   position: relative;
 }
 
-.header__container {
+.header__body {
   display: flex;
   min-height: 44px;
   align-items: center;
   justify-content: space-between;
-  padding: 0px 26px;
 }
 
 .header__logo {
