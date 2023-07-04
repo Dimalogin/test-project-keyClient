@@ -1,5 +1,6 @@
 import SIDE_PICTURES from "../data/side-pictures.js";
 import sidePictureTemplate from "../template/sidePuctureTemplate.js";
+import modalWindowTemplate from "../template/modalWindowTemplate.js";
 
 class CardProductView {
   #eventListeners = {
@@ -14,6 +15,15 @@ class CardProductView {
             const pictureId = Number(cartProductTarget.dataset.icon);
             this.#onLoadingSliderSlide(pictureId);
           }
+
+          if (cartProductTarget.closest(".buy-one-click__link")) {
+            this.#openModalWindow();
+          }
+
+          if (cartProductTarget.closest(".modal-window__close-btn")) {
+            this.#hideModalWindow();
+          }
+
           break;
       }
     },
@@ -21,8 +31,8 @@ class CardProductView {
 
   #cardProduct = null;
   #sidePicturesRow = null;
-  #sidePicture = null;
   #sliderSlides = null;
+  #modalWindow = null;
 
   constructor() {
     this.#initTemplate();
@@ -38,6 +48,9 @@ class CardProductView {
       ".side-pictures__row"
     );
     this.#sliderSlides = this.#cardProduct.querySelector(".slider__slides");
+    this.#modalWindow = this.#cardProduct.querySelector(
+      ".card-product__modal-window"
+    );
   }
 
   #bindListener() {
@@ -92,28 +105,34 @@ class CardProductView {
 
   #zoomPicture(event) {
     event.preventDefault();
+    const widthScreen = document.documentElement.clientWidth;
 
-    const position = this.#getCursorPosition();
+    if (widthScreen > 1200) {
+      const position = this.#getCursorPosition();
 
-    let x = position.x - 7 / 2;
-    let y = position.y - 7 / 2;
+      let x = position.x - 7 / 2;
+      let y = position.y - 7 / 2;
 
-    if (x > this.#sliderSlides.offsetWidth - 1) {
-      x = this.#sliderSlides.offsetWidth - 1;
-    }
-    if (x < 0) {
-      x = 0;
-    }
-    if (y > this.#sliderSlides.offsetHeight - 1) {
-      y = this.#sliderSlides.offsetHeight - 1;
-    }
-    if (y < 0) {
-      y = 0;
-    }
+      if (x > this.#sliderSlides.offsetWidth - 1) {
+        x = this.#sliderSlides.offsetWidth - 1;
+      }
+      if (x < 0) {
+        x = 0;
+      }
+      if (y > this.#sliderSlides.offsetHeight - 1) {
+        y = this.#sliderSlides.offsetHeight - 1;
+      }
+      if (y < 0) {
+        y = 0;
+      }
 
-    this.#sliderSlides.style.backgroundSize = `${300 * 6}px ${300 * 6}px`;
-    this.#sliderSlides.style.backgroundPosition =
-      "-" + x * 1.2 + "px -" + y * 1 + "px";
+      this.#sliderSlides.style.backgroundSize = `${300 * 6}px ${300 * 6}px`;
+      this.#sliderSlides.style.backgroundPosition =
+        "-" + x * 1.2 + "px -" + y * 1 + "px";
+    } else {
+      this.#sliderSlides.style.backgroundSize = `${100}% ${100}%`;
+      this.#sliderSlides.style.backgroundPosition = "0px";
+    }
   }
 
   #resetZoomPicture(event) {
@@ -137,6 +156,17 @@ class CardProductView {
     y = y - window.pageYOffset;
 
     return { x: x, y: y };
+  }
+
+  #openModalWindow() {
+    const modalWindowView = modalWindowTemplate.content.cloneNode(true);
+
+    this.#modalWindow.innerHTML = "";
+    this.#modalWindow.appendChild(modalWindowView);
+  }
+
+  #hideModalWindow() {
+    this.#modalWindow.innerHTML = "";
   }
 }
 

@@ -8,22 +8,42 @@
   max-width: 1385px;
   margin: 0px auto;
   display: flex;
-  flex-flow: row wrap;
+  flex-direction: row;
   justify-content: space-between;
+}
+
+@media (max-width: 1250px) {
+  .card-product__body {
+    flex-direction: column;
+  }
 }
 
 /*Slider*/
 
-.card-product__slider {
-  position: relative;
-  border: 1px solid black;
-}
-
 .slider__slides {
+  
   min-width: 686px;
   min-height: 878px;
+  max-width: 686px;
   position: relative;
   cursor: pointer;
+  margin: 0px auto;
+}
+
+@media (max-width: 780px) {
+  .slider__slides {
+    max-width: 450px;
+    min-width: 450px;
+    min-height: 600px;
+  }
+}
+
+@media (max-width: 550px) {
+  .slider__slides {
+    max-width: 300px;
+    min-width: 300px;
+    min-height: 400px;
+  }
 }
 
 .side-pictures__column:not(:last-child) {
@@ -32,9 +52,16 @@
 
 .slider__side-pictures {
   position: absolute;
-  border: 1px solid black;
+  
   top: 24px;
   left: 24px;
+}
+
+@media (max-width: 550px) {
+  .slider__side-pictures {
+    top: 10px;
+    left: 10px;
+  }
 }
 
 .side-pictures__picture {
@@ -42,6 +69,13 @@
   min-height: 90px;
   cursor: pointer;
   opacity: 0.5;
+}
+
+@media (max-width: 550px) {
+  .side-pictures__picture {
+    max-width: 40px;
+    min-height: 50px;
+  }
 }
 
 .side-pictures__picture:hover {
@@ -64,8 +98,14 @@
 
 .card-product__info-product {
   flex: 1 1 auto;
-  border: 1px solid black;
+ 
   margin: 0px 0px 0px 16px;
+}
+
+@media (max-width: 1250px) {
+  .card-product__info-product {
+    margin: 0px 0px 0px 0px;
+  }
 }
 
 .info-product__body {
@@ -241,6 +281,12 @@
   background: transparent;
 }
 
+@media (max-width: 550px) {
+  .info-product__select-size {
+    min-width: 200px;
+  }
+}
+
 .info-product__determine-size {
   margin: 0px 0px 40px 0px;
 }
@@ -258,7 +304,14 @@
 
 .info-product__basket {
   display: flex;
+  flex-direction: row;
   margin: 0px 0px 12px 0px;
+}
+
+@media (max-width: 550px) {
+  .info-product__basket {
+    flex-direction: column;
+  }
 }
 
 .basket__number-goods {
@@ -266,6 +319,12 @@
   flex-direction: row;
   align-items: center;
   margin: 0px 12px 0px 0px;
+}
+
+@media (max-width: 550px) {
+  .basket__number-goods {
+    margin: 0px 0px 15px 0px;
+  }
 }
 
 .number-goods__plus-btn {
@@ -323,6 +382,12 @@
 
 .basket__add-basket {
   margin: 0px 5px 0px 0px;
+}
+
+@media (max-width: 550px) {
+  .basket__add-basket {
+    margin: 0px 0px 15px 0px;
+  }
 }
 
 .add-basket__add-btn {

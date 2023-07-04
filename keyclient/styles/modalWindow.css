@@ -1,0 +1,126 @@
+.modal-window__content {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-window__body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  max-width: 378px;
+  min-height: 454px;
+  border: 1px solid #e6e9f0;
+  background: #fff;
+  padding: 40px 24px 24px 24px;
+  position: relative;
+}
+
+@media (max-width: 550px) {
+  .modal-window__body {
+    max-width: 300px;
+  }
+}
+
+.modal-window__close-btn {
+  min-width: 12px;
+  min-height: 12px;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.modal-window__title {
+  color: #303030;
+  font-size: 24px;
+  font-family: "Montserrat", "sans-serif";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 80%;
+}
+
+.modal-window__form {
+  margin: 40px 0px 0px 0px;
+}
+
+.form-modal__input-tel {
+  width: 100%;
+  min-height: 63px;
+  border: 0.5px solid #868686;
+  background: #fdfcfc;
+  padding: 0px 20px;
+  font-size: 16px;
+  font-family: "Montserrat", "sans-serif";
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  color: #303030;
+  margin: 0px 0px 16px 0px;
+}
+
+.form-modal__input-name {
+  width: 100%;
+  min-height: 63px;
+  border: 0.5px solid #868686;
+  background: #fdfcfc;
+  padding: 0px 20px;
+  font-size: 16px;
+  font-family: "Montserrat", "sans-serif";
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  color: #303030;
+  margin: 0px 0px 40px 0px;
+}
+
+.modal-window__line {
+  margin: 0px 0px 40px 0px;
+}
+
+.form-modal__agreement {
+  margin: 0px 0px 33px 0px;
+  color: #303030;
+  font-size: 10px;
+  font-family: "Montserrat", "sans-serif";
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
+  letter-spacing: -0.1px;
+}
+
+.agreement__link {
+  color: #303030;
+  text-decoration: underline;
+}
+
+.form-modal__btn-send {
+  min-width: 135px;
+  min-height: 44px;
+  border: 1px solid #333;
+  background: #333;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 14px;
+  font-family: Open, "sans-serif";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.56px;
+}
