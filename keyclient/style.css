@@ -1,5 +1,6 @@
 @import url(./styles/header.css);
 @import url(./styles/page-card-product.css);
+@import url(./styles/footer.css);
 
 * {
   padding: 0;
@@ -186,4 +187,9 @@ body {
   max-width: 1440px;
   margin: 0px auto;
   box-sizing: content-box;
+}
+
+
+main {
+  flex: 1 1 auto;
 }
