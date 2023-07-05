@@ -1,0 +1,131 @@
+.header {
+  background-color: #fff;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.header__body {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo {
+  display: block;
+  color: #000;
+  font-size: 22px;
+  font-family: Open, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.88px;
+  text-transform: uppercase;
+}
+
+.header__menu {
+  display: flex;
+  align-items: center;
+}
+
+/*======Icons======*/
+
+.icons__list {
+  display: flex;
+  flex-direction: row;
+}
+
+.icons__item:not(:last-child) {
+  margin: 0px 24px 0px 0px;
+}
+
+.icons__icon {
+  display: block;
+}
+
+/*======SideBar======*/
+
+.sidebar__hamb {
+  width: 24px;
+  height: 24px;
+  margin: 0px 0px 0px 24px;
+  padding: 4px 3px;
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  background-color: transparent;
+}
+
+@media (max-width: 450px) {
+  .sidebar__hamb {
+    display: flex;
+  }
+}
+
+.hamb__bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}
+
+.sidebar__panel {
+  width: 0;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  transition: 0.7s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.panel__close-btn {
+  position: absolute;
+  min-height: 24px;
+  min-width: 24px;
+  max-width: 24px;
+  background: transparent;
+  top: 18px;
+  right: 20px;
+}
+
+.close-btn__bar {
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: black;
+  border-radius: 3px;
+}
+
+.close-btn__bar:first-child {
+  transform: rotate(-45deg) translate(-3px, -1px);
+}
+
+.close-btn__bar:last-child {
+  transform: rotate(45deg) translate(-3px, 2px);
+}
+
+.panel__links {
+  padding: 80px 0px 0px 30px;
+}
+
+.links__item:not(:last-child) {
+  margin: 0px 0px 30px 0px;
+}
+
+.links__link {
+  color: #333;
+  font-size: 12px;
+  font-family: Open, "sans-serif";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.48px;
+  text-transform: uppercase;
+}
